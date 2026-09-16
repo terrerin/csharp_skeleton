@@ -16,4 +16,13 @@ public class OrderTests
 
         mockStock.Verify(s => s.PlaceHold(It.IsAny<int>(), It.IsAny<int>()));
     }
+
+    [Test]
+    public void AddingItemToOrderWhenSufficientStockIsAvailableAddsItemToOrder()
+    {
+        var order = new Order(new Mock<IStock>().Object);
+        order.AddItem(327, 1);
+
+        Assert.That(order.Items.Count, Is.EqualTo(1));
+    }
 }
