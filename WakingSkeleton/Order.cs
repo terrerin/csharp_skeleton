@@ -9,10 +9,15 @@ public sealed class Order
         _stock = stock;
     }
 
-    public List<object> Items { get; set; } = new List<object> { new() };
+    public List<Item> Items { get; set; } = new List<Item> { new() };
 
     public void AddItem(int productId, int quantity)
     {
         _stock.PlaceHold(productId, quantity);
     }
+}
+
+public class Item
+{
+    public int ProductId { get; } = 327;
 }
