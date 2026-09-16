@@ -25,5 +25,6 @@ public class OrderTests
 
         Assert.That(order.Items.Count, Is.EqualTo(1));
         Assert.That(order.Items.Single().ProductId, Is.EqualTo(327));
+        Assert.That(order.Items.Single().Quantity, Is.EqualTo(1));
     }
 }
